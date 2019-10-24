@@ -5,15 +5,21 @@ using UnityEngine.UI;
 public class KeepOnlySelectedSaveurs : MonoBehaviour
 {
 
+
     List<GameObject> SaveursRestantes = new List<GameObject>();
-
-
     private static  KeepOnlySelectedSaveurs instance;
     public static KeepOnlySelectedSaveurs Instance
     {
         get { return instance; }
     }
+
+
+
     public GameObject ButtonContainer;
+    public GameObject Shaker;
+    public int secondesBeforeShake = 1;
+
+
 
     private void OnEnable()
     {
@@ -40,5 +46,18 @@ public class KeepOnlySelectedSaveurs : MonoBehaviour
     public void containerVerticalLayoutON()
     {
         ButtonContainer.GetComponent<VerticalLayoutGroup>().enabled = true;
+        StartCoroutine(waitSomeTime(secondesBeforeShake));
+
+    }
+
+    IEnumerator waitSomeTime(int secondes)
+    {
+        for (int i = 0; i < secondes*60; i++)
+        {
+            yield return new WaitForEndOfFrame();
+           
+        }
+        Shaker.GetComponent<Animator>().SetTrigger("Shake");
+        
     }
 }

@@ -10,7 +10,6 @@ public class SaveurSelectedGoAway : MonoBehaviour
     private void OnEnable()
     {
         myAnimator = GetComponent<Animator>();
-        Debug.Log(name);
     }
 
     public void ButtonGoAwayAnim()
