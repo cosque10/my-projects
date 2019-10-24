@@ -6,20 +6,20 @@ using UnityEngine.UI;
 public class ChoosingSaveurs : MonoBehaviour
 {
     private static ChoosingSaveurs instance;
-    public static ChoosingSaveurs Instance;
-    private static List<Button> Saveurs = new List<Button>();
-    private static  List<Toggle> Toggles = new List<Toggle>();
+    public static ChoosingSaveurs Instance
+    {
+        get { return instance; }
+    }
+    [HideInInspector]
+    public  List<Toggle> Toggles = new List<Toggle>();
 
     private void OnEnable()
     {
-        Instance = this;
-        for (int i = 0; i < this.transform.childCount; i++)
+        instance = this;
+
+        for(int i = 0; i < transform.childCount; i++)
         {
-            Saveurs.Add(this.transform.GetChild(i).GetComponent<Button>());
-        }
-        for(int i = 0; i < Saveurs.Count; i++)
-        {
-            Toggles.Add(Saveurs[i].transform.GetChild(1).GetComponent<Toggle>());
+            Toggles.Add(transform.GetChild(i).transform.GetChild(1).GetComponent<Toggle>());
         }
     }
 }
