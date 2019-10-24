@@ -19,6 +19,7 @@ public class SaveurSelectedGoAway : MonoBehaviour
     }
     public void UnactiveObject()
     {
+        KeepOnlySelectedSaveurs.Instance.containerVerticalLayoutON();
         this.gameObject.SetActive(false);
     }
 }
