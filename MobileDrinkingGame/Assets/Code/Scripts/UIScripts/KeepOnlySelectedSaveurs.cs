@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class KeepOnlySelectedSaveurs : MonoBehaviour
 {
 
-
-    List<GameObject> SaveursRestantes = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> SaveursRestantes = new List<GameObject>();
     private static  KeepOnlySelectedSaveurs instance;
     public static KeepOnlySelectedSaveurs Instance
     {
@@ -42,7 +42,7 @@ public class KeepOnlySelectedSaveurs : MonoBehaviour
         }
       
     }
-
+    
     public void containerVerticalLayoutON()
     {
         ButtonContainer.GetComponent<VerticalLayoutGroup>().enabled = true;
