@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveursPhrases 
+public class SaveursPhrases : MonoBehaviour
 {
 
-    public string[] tableau1 = new string[70];
+    public string[] PasDeChance = new string[70];
+
+    private void OnEnable()
+    {
+        
+    }
+
+
 }
