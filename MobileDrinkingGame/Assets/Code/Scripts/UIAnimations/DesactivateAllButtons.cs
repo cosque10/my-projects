@@ -22,7 +22,7 @@ public class DesactivateAllButtons : MonoBehaviour
         nextCanvas.SetActive(true);
         GameManager.Instance.currentGameState = GameManager.GameState.inGame;
         string currentName =  ChoosePlayersLogic.Instance.ChoosePlayerName();
-        string currentPhrase = "will do this";
+        string currentPhrase = ChoosePhrasesLogic.Instance.ChooseNextPhrase();
         GameManager.Instance.inGameText.text = currentName + " " + currentPhrase;
         gameObject.transform.parent.gameObject.SetActive(false);
     }

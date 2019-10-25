@@ -12,9 +12,12 @@ public class SaveurBoutton : MonoBehaviour
     [HideInInspector]
     public Color saveurBGColor;
 
+    public string SaveurNameString;
+
     private void OnEnable()
     {
-        saveurName.text = mySaveur.saveurName;
+        SaveurNameString = mySaveur.saveurName;
+        saveurName.text = SaveurNameString;
         saveurDescription.text = mySaveur.description;
         saveurPhrases = mySaveur.phrases;
         saveurBGColor = mySaveur.backGroundColor;

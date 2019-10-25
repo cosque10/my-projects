@@ -30,17 +30,22 @@ public class KeepOnlySelectedSaveurs : MonoBehaviour
         List<Toggle> myToggles = ChoosingSaveurs.Instance.Toggles;
         for (int i = 0; i < myToggles.Count; i++)
         {
-            // IMpleter une erreur si il n'y a aucun mode choisi !!
-            if (!myToggles[i].isOn)
+            if(myToggles[i]  != null)
             {
-                myToggles[i].GetComponentInParent<SaveurSelectedGoAway>().ButtonGoAwayAnim();
+                // IMpleter une erreur si il n'y a aucun mode choisi !!
+                if (!myToggles[i].isOn)
+                {
+                    myToggles[i].GetComponentInParent<SaveurSelectedGoAway>().ButtonGoAwayAnim();
+                }
+                else
+                {
+                    SaveursRestantes.Add(myToggles[i].transform.parent.gameObject);
+                }
             }
-            else
-            {
-                SaveursRestantes.Add(myToggles[i].transform.parent.gameObject);
-            }
+
+
         }
-      
+        ChoosePhrasesLogic.Instance.GetAllThePhrases(SaveursRestantes);
     }
     
     public void containerVerticalLayoutON()

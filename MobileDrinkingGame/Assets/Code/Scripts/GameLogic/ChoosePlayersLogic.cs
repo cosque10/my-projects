@@ -56,7 +56,6 @@ public class ChoosePlayersLogic : MonoBehaviour
                     {
                         currentPlayersNames.Add(GetPlayersNames.Instance.playerNames[i]);
                     }
-                    Debug.Log(currentPlayersNames.Count);
                 }
                 else if (indexInTurn == GetPlayersNames.Instance.playerNames.Count - 1)
                 {
@@ -80,7 +79,6 @@ public class ChoosePlayersLogic : MonoBehaviour
                     {
                         currentPlayersNames.Add(GetPlayersNames.Instance.playerNames[i]);
                     }
-                    Debug.Log(currentPlayersNames.Count);
                 }
                 else if (indexInTurn == GetPlayersNames.Instance.playerNames.Count - 1)
                 {

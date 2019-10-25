@@ -23,15 +23,18 @@ public class GameManager : MonoBehaviour
     public GameState currentGameState = GameState.inMenu;
     #endregion
 
-
+    public GameObject GameOverCanvas;
+    public GameObject inGameCanvas;
+    public int MaximumClickPerGame;
     public TextMeshProUGUI inGameText;
     private void OnEnable()
     {
         instance = this;
     }
-    private void Update()
+    public void FinishGame()
     {
-     
+        inGameCanvas.SetActive(false);
+        GameOverCanvas.SetActive(true);
     }
 
 }
